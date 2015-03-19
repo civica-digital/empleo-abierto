@@ -1,2 +1,96 @@
-<h1>Results#index</h1>
-<p>Find me in app/views/results/index.html.erb</p>
+<%= image_tag "banner.jpg", {width: "100%", height: 350}%>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-2">
+    <input type="text" class="form-control" id="exampleInput1" placeholder="Tipo de empleo">
+  </div>
+  <div class="col-md-2">
+    <input type="text" class="form-control" id="exampleInput2" placeholder="Institucion">
+  </div>
+  <div class="col-md-2">
+    <input type="text" class="form-control" id="exampleInput3" placeholder="Salario">
+  </div>
+  <button type="submit" class="btn btn-default col-md-1">Buscar</button>
+</div>
+
+<br>
+
+<table class="table table-bordered table-striped">
+	<th>Puesto</th>
+	<th>Institucion</th>
+	<th>Salario</th>
+	<th>Telefono</th>
+	<tr>
+		<td>Secretario General</td>
+		<td>Instituto Federal Electoral</td>
+		<td>15,000 pesos</td> 
+		<td>12345678 ext. 123</td>
+	</tr>
+	<tr>
+		<td>Secretario General</td>
+		<td>Instituto Federal Electoral</td>
+		<td>15,000 pesos</td> 
+		<td>12345678 ext. 123</td>
+	</tr>
+	<tr>
+		<td>Secretario General</td>
+		<td>Instituto Federal Electoral</td>
+		<td>15,000 pesos</td> 
+		<td>12345678 ext. 123</td>
+	</tr>
+	<tr>
+		<td>Secretario General</td>
+		<td>Instituto Federal Electoral</td>
+		<td>15,000 pesos</td> 
+		<td>12345678 ext. 123</td>
+	</tr>
+	<tr>
+		<td>Secretario General</td>
+		<td>Instituto Federal Electoral</td>
+		<td>15,000 pesos</td> 
+		<td>12345678 ext. 123</td>
+	</tr>
+	<tr>
+		<td>Secretario General</td>
+		<td>Instituto Federal Electoral</td>
+		<td>15,000 pesos</td> 
+		<td>12345678 ext. 123</td>
+	</tr>
+	<tr>
+		<td>Secretario General</td>
+		<td>Instituto Federal Electoral</td>
+		<td>15,000 pesos</td> 
+		<td>12345678 ext. 123</td>
+	</tr>
+	<tr>
+		<td>Secretario General</td>
+		<td>Instituto Federal Electoral</td>
+		<td>15,000 pesos</td> 
+		<td>12345678 ext. 123</td>
+	</tr>
+	<tr>
+		<td>Secretario General</td>
+		<td>Instituto Federal Electoral</td>
+		<td>15,000 pesos</td> 
+		<td>12345678 ext. 123</td>
+	</tr>
+	<tr>
+		<td>Secretario General</td>
+		<td>Instituto Federal Electoral</td>
+		<td>15,000 pesos</td> 
+		<td>12345678 ext. 123</td>
+	</tr>
+</table>
+
+
+
+<div class="text-center">
+       <%= link_to "1", results_index_path %> | 
+	   <%= link_to "2", results_index_path %> | 
+	   <%= link_to "3", results_index_path %> ...
+	   <%= link_to "SIguiente", results_index_path %>
+</div>
+
