@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  key: MyString
+  type: 
+  salary: 1.5
+  compensation: 1.5
+  available: false
+  institution_id: 
+
+two:
+  name: MyString
+  key: MyString
+  type: 
+  salary: 1.5
+  compensation: 1.5
+  available: false
+  institution_id: 
