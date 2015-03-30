@@ -1,28 +1,7 @@
-== README
+Empleo abierto es una plataforma que le permite a las personas encontrar empleo dentro de instituciones de gobierno. El usuario puede ver los empleos disponibles en todas las diferentes instituciones, asi como filtrar resultados por tipo de empleo, institución o rango de salario.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Los datasets para la aplicación son sacados de las siguientes dos ligas.
 
-Things you may want to cover:
+Remuneración mensual de los puestos en el Gobierno Federal: http://datamx.io/dataset/remuneracion-mensual-de-los-puestos-en-el-gobierno-federal
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Directorio de funcionarios públicos del Gobierno Federal: http://datamx.io/dataset/directorio-de-funcionarios-publicos-del-gobierno-federal
