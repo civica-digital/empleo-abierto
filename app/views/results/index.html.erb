@@ -34,75 +34,20 @@
 			<th width: auto>Salario</th>
 			<th width: auto>Telefono</th>
 		</tr>
-		<tr>
-			<td>Secretario General</td>
-			<td>Instituto Federal Electoral</td>
-			<td>15,000 pesos</td> 
-			<td>12345678 ext. 123</td>
-		</tr>
-		<tr>
-			<td>Secretario General</td>
-			<td>Instituto Federal Electoral</td>
-			<td>15,000 pesos</td> 
-			<td>12345678 ext. 123</td>
-		</tr>
-		<tr>
-			<td>Secretario General</td>
-			<td>Instituto Federal Electoral</td>
-			<td>15,000 pesos</td> 
-			<td>12345678 ext. 123</td>
-		</tr>
-		<tr>
-			<td>Secretario General</td>
-			<td>Instituto Federal Electoral</td>
-			<td>15,000 pesos</td> 
-			<td>12345678 ext. 123</td>
-		</tr>
-		<tr>
-			<td>Secretario General</td>
-			<td>Instituto Federal Electoral</td>
-			<td>15,000 pesos</td> 
-			<td>12345678 ext. 123</td>
-		</tr>
-		<tr>
-			<td>Secretario General</td>
-			<td>Instituto Federal Electoral</td>
-			<td>15,000 pesos</td> 
-			<td>12345678 ext. 123</td>
-		</tr>
-		<tr>
-			<td>Secretario General</td>
-			<td>Instituto Federal Electoral</td>
-			<td>15,000 pesos</td> 
-			<td>12345678 ext. 123</td>
-		</tr>
-		<tr>
-			<td>Secretario General</td>
-			<td>Instituto Federal Electoral</td>
-			<td>15,000 pesos</td> 
-			<td>12345678 ext. 123</td>
-		</tr>
-		<tr>
-			<td>Secretario General</td>
-			<td>Instituto Federal Electoral</td>
-			<td>15,000 pesos</td> 
-			<td>12345678 ext. 123</td>
-		</tr>
-		<tr>
-			<td>Secretario General</td>
-			<td>Instituto Federal Electoral</td>
-			<td>15,000 pesos</td> 
-			<td>12345678 ext. 123</td>
-		</tr>
+		<% @jobs.each do |job| %>
+			<tr>
+				<td><%= job.name %></td>
+				<td><%= job.institution.name%></td>
+				<td><%= number_to_currency(job.salary, :unit => "$")%></td> 
+				<td><%= job.institution.telephone %></td>
+			</tr>
+		<% end %>
 	</table>
 </div>
 
 
 
 <div class="text-center">
-       <%= link_to "1", results_index_path %> | 
-	   <%= link_to "2", results_index_path %> | 
-	   <%= link_to "3", results_index_path %> ...
-	   <%= link_to "SIguiente", results_index_path %>
+    <%= paginate @jobs, :window => 2 %>
 </div>
 
