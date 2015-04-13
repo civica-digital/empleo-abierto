@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'results/index' => 'results#index'
+  get 'results/search' => 'results#search'
 
   root 'results#index'
   # The priority is based upon order of creation: first created -> highest priority.

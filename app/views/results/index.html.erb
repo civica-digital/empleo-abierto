@@ -11,18 +11,20 @@
 
 <div class="container">
 	<div class="row" id="filter-search">
-	  <div class="col-md-4">
-	    <input type="text" class="form-control" id="exampleInput1" placeholder="Tipo de empleo">
-	  </div>
-	  <div class="col-md-4">
-	    <input type="text" class="form-control" id="exampleInput2" placeholder="Institucion">
-	  </div>
-	  <div class="col-md-3">
-	    <input type="text" class="form-control" id="exampleInput3" placeholder="Salario">
-	  </div>
-	  <div class="col-md-1">
-	  	<button type="submit" class="btn btn-default" >Buscar</button>
-	  </div>
+		<%= form_tag({controller: "results", action: "search"}, method: "get") do %>
+		  <div class="col-md-4">
+		  	<%= text_field_tag(:job, nil, placeholder: "Tipo de empleo", class: "form-control") %>
+		  </div>
+		  <div class="col-md-4">
+		    <%= select_tag :institution, options_for_select(@institutions.collect{ |i| [i.name, i.id] }), { :include_blank=> "Institucion", :class => "form-control" } %>
+		  </div>
+		  <div class="col-md-3">
+		    <%= select_tag :salary, options_for_select([["Menor a $5,000", 1], ["Entre $5,000 y $10,000", 2], ["Entre 10,000 y 20,000", 3], ["Mayor a $20,000", 4]]), { :include_blank=> "Salario", :class => "form-control" } %>
+		  </div>
+		  <div class="col-md-1">
+		  	<%= submit_tag("Buscar", class: "btn btn-default") %>
+		  </div>
+	  <% end %>
 	</div>
 </div>
 
