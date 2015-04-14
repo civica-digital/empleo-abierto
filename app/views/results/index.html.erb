@@ -16,10 +16,10 @@
 		  	<%= text_field_tag(:job, nil, placeholder: "Tipo de empleo", class: "form-control") %>
 		  </div>
 		  <div class="col-md-4">
-		    <%= select_tag :institution, options_for_select(@institutions.collect{ |i| [i.name, i.id] }), { :include_blank=> "Institucion", :class => "form-control" } %>
+		    <%= select_tag :institution, options_for_select(@institutions.collect{ |i| [i.name.mb_chars.capitalize, i.id] }), { :include_blank=> "Todas las Instituciones", :class => "form-control" } %>
 		  </div>
 		  <div class="col-md-3">
-		    <%= select_tag :salary, options_for_select([["Menor a $5,000", 1], ["Entre $5,000 y $10,000", 2], ["Entre 10,000 y 20,000", 3], ["Mayor a $20,000", 4]]), { :include_blank=> "Salario", :class => "form-control" } %>
+		    <%= select_tag :salary, options_for_select([["Menor a $5,000", 1], ["Entre $5,000 y $10,000", 2], ["Entre $10,000 y $20,000", 3], ["Mayor a $20,000", 4]]), { :include_blank=> "Cualquier Salario", :class => "form-control" } %>
 		  </div>
 		  <div class="col-md-1">
 		  	<%= submit_tag("Buscar", class: "btn btn-default") %>
@@ -38,8 +38,8 @@
 		</tr>
 		<% @jobs.each do |job| %>
 			<tr>
-				<td><%= job.name %></td>
-				<td><%= job.institution.name%></td>
+				<td><%= job.name.mb_chars.capitalize %></td>
+				<td><%= job.institution.name.mb_chars.capitalize%></td>
 				<td><%= number_to_currency(job.salary, :unit => "$")%></td> 
 				<td><%= job.institution.telephone %></td>
 			</tr>
