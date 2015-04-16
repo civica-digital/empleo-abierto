@@ -1,7 +1,22 @@
 class ResultsController < ApplicationController
   def index
-  	@institutions = Institution.all
-  	@jobs = Job.where(available: true).order(:institution_id).page params[:page]
+  	max_jobs = 0
+    max_institution = 0
+    @institutions = Institution.all
+  	@jobs = Job.where(available: true)
+    @total = @jobs.count
+
+    @institutions.each do |i|
+      j = Job.where(available: true, institution_id: i.id)
+      if j.count > max_jobs then
+        max_jobs = j.count
+        max_institution = i
+      end
+    end
+    @max_institution = max_institution.name
+    highest_job = @jobs.order(:salary).last
+    @max_salary = highest_job.salary
+    @jobs = @jobs.order(:institution_id).page params[:page]
   end
 
   def search

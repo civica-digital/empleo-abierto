@@ -10,6 +10,14 @@
 </div>
 
 <div class="container">
+	<div class="kpis">
+		<h3> Total de empleos abiertos: <b><%=@total%></b></h3>
+		<h3> Institucion con mas empleos abiertos: <b><%=@max_institution.mb_chars.capitalize%></b></h3>
+		<h3> Mejor salario de un empleo abierto: <b><%=number_to_currency(@max_salary, :unit => "$")%></b></h3>
+	</div>
+</div>
+
+<div class="container">
 	<div class="row" id="filter-search">
 		<%= form_tag({controller: "results", action: "search"}, method: "get") do %>
 		  <div class="col-md-4">
