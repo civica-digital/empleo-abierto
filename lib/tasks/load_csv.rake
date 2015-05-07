@@ -47,4 +47,23 @@ namespace :load_csv do
 	end
   end
 
+  task task4: :environment do
+  	destination = "db/seeds.rb"
+  	institutions = Institution.all
+  	jobs = Job.all
+  	File.open(destination, "w") do |f|
+  		f.puts "Institution.transaction do"
+  		institutions.each do |i|
+  			f.puts "Institution.connection.execute \"INSERT INTO institutions (id, name, telephone, extension, created_at, updated_at) values (#{i.id}, \'#{i.name}\', \'#{i.telephone}\', \'#{i.extension}\', \'#{i.created_at}\', \'#{i.updated_at}\')\""
+  		end
+  		f.puts "end"
+
+  		f.puts "Job.transaction do"
+  		jobs.each do |j|
+  			f.puts "Job.connection.execute \"INSERT INTO jobs (id, name, key, job_type, salary, compensation, available, institution_id, created_at, updated_at) values (#{j.id}, \'#{j.name}\', \'#{j.key}\', \'#{j.job_type}\', #{j.salary}, #{j.compensation}, #{j.available}, #{j.institution_id}, \'#{j.created_at}\', \'#{j.updated_at}\')\""
+  		end
+  		f.puts "end"
+  	end
+  end
+
 end
