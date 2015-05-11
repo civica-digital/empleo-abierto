@@ -1,0 +1,28 @@
+<div class="container">
+	<table class="table table-bordered table-striped">
+		<tr>
+			<th width: auto>Puesto</th>
+			<th width: auto>Institución</th>
+			<th width: auto>Salario Mensual</th>
+			<th width: auto>Teléfono</th>
+		</tr>
+		<% @jobs.each do |job| %>
+			<tr>
+				<td><%= job.name.mb_chars.capitalize %></td>
+				<td><%= job.institution.name.mb_chars.capitalize%></td>
+				<% if job.salary == 0 %>
+					<td>No disponible</td>
+				<% else %>
+					<td><%= number_to_currency(job.salary, :unit => "$")%></td>
+				<% end %>
+				<td><%= job.institution.telephone %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+
+
+<div class="text-center">
+    <%= paginate @jobs, :window => 2 %>
+</div>
