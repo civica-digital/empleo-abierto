@@ -1,3 +1,6 @@
+<%#app/views/results/_results.html.erb%>
+<%#This is the partial that contains the results when performing a search or all the results when accessing the root.%>
+
 <div class="container">
 	<table class="table table-bordered table-striped">
 		<tr>
@@ -10,7 +13,7 @@
 			<tr>
 				<td><%= job.name.mb_chars.capitalize %></td>
 				<td><%= job.institution.name.mb_chars.capitalize%></td>
-				<% if job.salary == 0 %>
+				<% if job.salary == 0 %> <%#if the job's salary is equal to 0, then we display "No disponible"%>
 					<td>No disponible</td>
 				<% else %>
 					<td><%= number_to_currency(job.salary, :unit => "$")%></td>

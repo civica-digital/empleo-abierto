@@ -1,4 +1,7 @@
+<%#app/views/results/index.html.erb%>
+<%#This is the root of the application, it displays all of the available jobs%>
 
+<%#Here we display the main KPIs which include: total number of jobs, institution with more jobs and highest salary of an open job.%>
 <div class="container">
 	<div class="kpis">
 		<h3> Total de empleos abiertos: <b><%=@total%></b></h3>
@@ -7,7 +10,9 @@
 	</div>
 </div>
 
+<%#We render the partial called filters which is in app/views/results/_filters.html.erb%>
 <%= render 'filters' %>
 
+<%#We render the partial called results which is in app/views/results/_results.html.erb%>
 <%= render 'results' %>
 

@@ -1,3 +1,7 @@
+<%#app/views/results/_filters.html.erb%>
+<%#This is the partial that contains the search filters for the application.%>
+
+<%#The form has the "GET" method so the URL shows the search the user performed.%>
 <div class="container">
 	<div class="row" id="filter-search">
 		<%= form_tag({controller: "results", action: "search"}, method: "get") do %>

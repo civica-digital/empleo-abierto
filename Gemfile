@@ -23,9 +23,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+#This two gems are to integrate bootstrap with rails
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'autoprefixer-rails'
 
+#This gem allows you to add pagination to the search results
 gem 'kaminari'
 
 # Use ActiveModel has_secure_password
@@ -47,6 +49,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
+  #This gem is used if you want to dump all your data into the seeds.rb file
   gem 'seed_dump'
 end
 

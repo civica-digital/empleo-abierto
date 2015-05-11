@@ -1,11 +1,15 @@
+<%#app/views/results/search.html.%>
+<%#This is the view that appears after you make a search with the filters%>
 
+<%#We render the partial called filters which is in app/views/results/_filters.html.erb%>
 <%= render 'filters' %>
 
+<%#We display the total amount of results found after performing a search%>
 <div class="container">
 	<div class="results">
 		<h1> Se encontraron <%=@total%> resultados.</h1>
 	</div>
 </div>
 
-
+<%#We render the partial called results which is in app/views/results/_results.html.erb%>
 <%= render 'results' %>
